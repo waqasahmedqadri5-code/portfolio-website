@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqas - Developer Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* ==========================
+       GLOBAL STYLES
+    ========================== */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:rgb(1,1,55);
+      color:white;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* ==========================
+       NAVBAR
+    ========================== */
+
+    nav{
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+      height:80px;
+      background:rgb(17,17,70);
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+
+    .left{
+      font-size:1.5rem;
+      font-weight:600;
+    }
+
+    nav ul{
+      display:flex;
+    }
+
+    nav ul li{
+      list-style:none;
+      margin:0 20px;
+    }
+
+    nav ul li a:hover{
+      color:rgb(156,99,209);
+      transition:.3s;
+    }
+
+    /* ==========================
+       HERO SECTION
+    ========================== */
+
+    .firstSection{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      max-width:1200px;
+      margin:100px auto;
+      padding:0 40px;
+    }
+
+    .firstSection > div{
+      width:45%;
+    }
+
+    .leftSection{
+      font-size:3rem;
+      line-height:1.4;
+    }
+
+    .purple{
+      color:rgb(156,99,209);
+    }
+
+    #element{
+      color:rgb(156,99,209);
+    }
+
+    .rightSection img{
+      width:100%;
+      max-width:500px;
+    }
+
+    /* ==========================
+       HR
+    ========================== */
+
+    main hr{
+      border:0;
+      background:#9c97f1;
+      height:1.2px;
+      margin:60px 84px;
+    }
+
+    /* ==========================
+       WORK EXPERIENCE
+    ========================== */
+
+    .secondsection{
+      max-width:80vw;
+      margin:auto;
+      min-height:100vh;
+    }
+
+    .text-gray{
+      color:gray;
+      font-size:14px;
+    }
+
+    .secondsection h1{
+      font-size:2rem;
+      margin-top:10px;
+    }
+
+    .box{
+      background:white;
+      width:80vw;
+      height:2px;
+      margin:70px 0;
+      display:flex;
+      justify-content:space-between;
+    }
+
+    .vertical{
+      height:90px;
+      width:2px;
+      background:white;
+      position:relative;
+    }
+
+    .image-top{
+      width:25px;
+      position:absolute;
+      top:-32px;
+      left:-12px;
+    }
+
+    .vertical-title{
+      position:absolute;
+      top:100px;
+      width:150px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .vertical-desc{
+      position:absolute;
+      top:145px;
+      width:150px;
+      color:gray;
+      font-size:10px;
+      line-height:1.5;
+    }
+
+    /* ==========================
+       ABOUT SECTION
+    ========================== */
+
+    .about-section{
+      max-width:1100px;
+      margin:0 auto;
+      padding:80px 40px;
+    }
+
+    .about-section .text-gray{
+      color:gray;
+      font-size:14px;
+    }
+
+    .about-section h1{
+      font-size:2rem;
+      margin-top:10px;
+      margin-bottom:40px;
+    }
+
+    .about-content{
+      display:flex;
+      gap:60px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+
+    .about-text{
+      flex:1;
+      min-width:280px;
+    }
+
+    .about-text p{
+      color:#ccc;
+      font-size:0.95rem;
+      line-height:1.9;
+      margin-bottom:20px;
+    }
+
+    .about-text .career-goal{
+      background:rgb(17,17,70);
+      border-left:3px solid rgb(156,99,209);
+      padding:16px 20px;
+      border-radius:0 8px 8px 0;
+      font-size:0.9rem;
+      color:#ddd;
+      line-height:1.7;
+      margin-top:10px;
+    }
+
+    .about-skills{
+      flex:1;
+      min-width:280px;
+    }
+
+    .about-skills h3{
+      font-size:1.1rem;
+      font-weight:600;
+      margin-bottom:20px;
+      color:white;
+    }
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:14px;
+    }
+
+    .skill-card{
+      background:rgb(17,17,70);
+      border:1px solid rgba(156,99,209,0.2);
+      border-radius:10px;
+      padding:14px 16px;
+      font-size:0.85rem;
+      font-weight:500;
+      color:#ddd;
+      cursor:default;
+      transition:all 0.3s ease;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .skill-card:hover{
+      background:rgba(156,99,209,0.15);
+      border-color:rgb(156,99,209);
+      color:white;
+      transform:translateY(-3px);
+    }
+
+    .skill-card span.skill-icon{
+      font-size:1.2rem;
+    }
+
+    /* ==========================
+       PROJECTS SECTION
+    ========================== */
+
+    .projects-section{
+      max-width:1100px;
+      margin:0 auto;
+      padding:80px 40px;
+    }
+
+    .projects-section .text-gray{
+      color:gray;
+      font-size:14px;
+    }
+
+    .projects-section h1{
+      font-size:2rem;
+      margin-top:10px;
+      margin-bottom:40px;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:26px;
+    }
+
+    .project-card{
+      background:rgb(17,17,70);
+      border:1px solid rgba(255,255,255,0.07);
+      border-radius:12px;
+      overflow:hidden;
+      transition:transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(156,99,209,0.5);
+    }
+
+    /*
+      ============================================
+      HOW TO ADD PROJECT IMAGES:
+      1. Create a folder called "images" next to this HTML file.
+      2. Add your project screenshot as a .jpg or .png.
+      3. Replace "images/project1.jpg" with your image path.
+      Example: src="images/portfolio.png"
+      ============================================
+    */
+
+    .project-img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      background:rgb(10,10,80);
+      display:block;
+    }
+
+    .project-img-placeholder{
+      width:100%;
+      height:180px;
+      background:linear-gradient(135deg, rgb(10,10,80), rgb(30,10,70));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2.5rem;
+    }
+
+    .project-body{
+      padding:20px;
+    }
+
+    .project-body h3{
+      font-size:1rem;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+
+    .project-body p{
+      font-size:0.82rem;
+      color:#aaa;
+      line-height:1.6;
+      margin-bottom:18px;
+    }
+
+    .project-btns{
+      display:flex;
+      gap:10px;
+    }
+
+    .btn-demo{
+      background:rgb(156,99,209);
+      color:white;
+      padding:8px 16px;
+      border-radius:6px;
+      font-size:0.8rem;
+      font-weight:500;
+      transition:background 0.3s ease;
+    }
+
+    .btn-demo:hover{
+      background:rgb(130,70,190);
+    }
+
+    .btn-github{
+      background:transparent;
+      color:white;
+      padding:8px 16px;
+      border-radius:6px;
+      font-size:0.8rem;
+      font-weight:500;
+      border:1px solid rgba(255,255,255,0.25);
+      transition:border-color 0.3s ease;
+    }
+
+    .btn-github:hover{
+      border-color:rgb(156,99,209);
+      color:rgb(156,99,209);
+    }
+
+    /* ==========================
+       CONTACT SECTION
+    ========================== */
+
+    .contact-section{
+      max-width:1100px;
+      margin:0 auto;
+      padding:80px 40px;
+    }
+
+    .contact-section .text-gray{
+      color:gray;
+      font-size:14px;
+    }
+
+    .contact-section h1{
+      font-size:2rem;
+      margin-top:10px;
+      margin-bottom:40px;
+    }
+
+    .contact-wrapper{
+      display:flex;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .contact-info{
+      flex:1;
+      min-width:260px;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      margin-bottom:28px;
+    }
+
+    .contact-icon{
+      width:44px;
+      height:44px;
+      background:rgb(17,17,70);
+      border:1px solid rgba(156,99,209,0.3);
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.1rem;
+      flex-shrink:0;
+    }
+
+    .contact-detail{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .contact-detail span:first-child{
+      font-size:0.78rem;
+      color:gray;
+      margin-bottom:3px;
+    }
+
+    .contact-detail a,
+    .contact-detail span:last-child{
+      font-size:0.92rem;
+      font-weight:500;
+      color:white;
+    }
+
+    .contact-detail a:hover{
+      color:rgb(156,99,209);
+    }
+
+    .whatsapp-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      /*
+        ============================================
+        HOW TO CHANGE WHATSAPP NUMBER:
+        Replace "923302236231" below with your number.
+        Format: 92 (country code) + 3XXXXXXXXX (your number)
+        Example: wa.me/923001234567
+        ============================================
+      */
+      background:#25D366;
+      color:white;
+      padding:14px 28px;
+      border-radius:10px;
+      font-size:0.92rem;
+      font-weight:600;
+      margin-top:10px;
+      transition:background 0.3s ease, transform 0.2s ease;
+      width:fit-content;
+    }
+
+    .whatsapp-btn:hover{
+      background:#1eb557;
+      color:white;
+      transform:translateY(-2px);
+    }
+
+    .whatsapp-btn svg{
+      width:20px;
+      height:20px;
+      fill:white;
+    }
+
+    /* ==========================
+       FOOTER
+    ========================== */
+
+    footer{
+      background:rgb(17,17,70);
+      padding:50px 40px 30px;
+      margin-top:40px;
+    }
+
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:40px;
+      max-width:1100px;
+      margin:0 auto 40px;
+    }
+
+    .footer-brand p{
+      font-size:1.3rem;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    .footer-brand span{
+      font-size:0.82rem;
+      color:#aaa;
+      line-height:1.7;
+      display:block;
+      max-width:260px;
+    }
+
+    .footer-links h4,
+    .footer-social h4{
+      font-size:0.9rem;
+      font-weight:600;
+      margin-bottom:16px;
+      color:rgb(156,99,209);
+    }
+
+    .footer-links ul{
+      list-style:none;
+    }
+
+    .footer-links ul li{
+      margin-bottom:10px;
+    }
+
+    .footer-links ul li a{
+      font-size:0.85rem;
+      color:#aaa;
+      transition:color 0.3s;
+    }
+
+    .footer-links ul li a:hover{
+      color:white;
+    }
+
+    .footer-social .social-icons{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .footer-social .social-icons a{
+      font-size:0.85rem;
+      color:#aaa;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      transition:color 0.3s;
+    }
+
+    .footer-social .social-icons a:hover{
+      color:rgb(156,99,209);
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding-top:24px;
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+
+    .footer-bottom p{
+      font-size:0.82rem;
+      color:#888;
+    }
+
+    .back-to-top{
+      background:rgb(156,99,209);
+      color:white;
+      padding:9px 18px;
+      border-radius:8px;
+      font-size:0.8rem;
+      font-weight:500;
+      transition:background 0.3s ease;
+    }
+
+    .back-to-top:hover{
+      background:rgb(130,70,190);
+      color:white;
+    }
+
+    /* ==========================
+       RESPONSIVE DESIGN
+    ========================== */
+
+    @media(max-width:1024px){
+      .projects-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+      }
+
+      nav ul{
+        margin-top:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .firstSection{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      .firstSection > div{
+        width:100%;
+      }
+
+      .leftSection{
+        font-size:2rem;
+        margin-top:30px;
+      }
+
+      .box{
+        overflow-x:auto;
+        gap:80px;
+        justify-content:flex-start;
+        padding-right:50px;
+      }
+
+      .vertical{
+        min-width:2px;
+      }
+
+      main hr{
+        margin:60px 30px;
+      }
+
+      .about-section,
+      .projects-section,
+      .contact-section{
+        padding:60px 24px;
+      }
+
+      .about-content{
+        flex-direction:column;
+        gap:36px;
+      }
+
+      .skills-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      .projects-grid{
+        grid-template-columns:1fr;
+      }
+
+      .contact-wrapper{
+        flex-direction:column;
+      }
+
+      .footer-top{
+        flex-direction:column;
+        gap:30px;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+    }
+
+    @media(max-width:480px){
+
+      .leftSection{
+        font-size:1.7rem;
+      }
+
+      .skills-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .about-section h1,
+      .projects-section h1,
+      .contact-section h1,
+      .secondsection h1{
+        font-size:1.6rem;
+      }
+    }
+
+    @media(max-width:320px){
+      .skills-grid{
+        grid-template-columns:1fr;
+      }
+
+      .project-btns{
+        flex-direction:column;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================
+       HEADER / NAVBAR
+  ========================== -->
+
+  <header>
+    <nav>
+      <div class="left">Waqas's Portfolio</div>
+
+      <div class="right">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+    <!-- HERO SECTION -->
+
+    <section class="firstSection" id="hero">
+
+      <div class="leftSection">
+        Hi, I'm <span class="purple">Waqas</span><br>
+        A Passionate <span id="element"></span>
+      </div>
+
+      <div class="rightSection">
+        <!-- Replace "bg.png" with your own hero image -->
+        <img src="bg.png" alt="Developer Illustration">
+      </div>
+
+    </section>
+
+    <hr>
+
+    <!-- WORK EXPERIENCE -->
+
+    <section class="secondsection">
+
+      <span class="text-gray">What I have done so far</span>
+
+      <h1>Work Experience</h1>
+
+      <div class="box">
+
+        <div class="vertical">
+          <img class="image-top" src="developer.png" alt="">
+          <div class="vertical-title">
+            HTML Developer<br>(2021-2023)
+          </div>
+          <div class="vertical-desc">
+            Built responsive websites using HTML, CSS and JavaScript.
+          </div>
+        </div>
+
+        <div class="vertical">
+          <img class="image-top" src="developer.png" alt="">
+          <div class="vertical-title">
+            Node.js Developer<br>(2023-2024)
+          </div>
+          <div class="vertical-desc">
+            Developed backend APIs and integrated databases.
+          </div>
+        </div>
+
+        <div class="vertical">
+          <img class="image-top" src="developer.png" alt="">
+          <div class="vertical-title">
+            Frontend Developer
+          </div>
+          <div class="vertical-desc">
+            Created modern and responsive user interfaces.
+          </div>
+        </div>
+
+        <div class="vertical">
+          <img class="image-top" src="developer.png" alt="">
+          <div class="vertical-title">
+            Freelancer
+          </div>
+          <div class="vertical-desc">
+            Delivered web development projects for clients.
+          </div>
+        </div>
+
+        <div class="vertical">
+          <img class="image-top" src="developer.png" alt="">
+          <div class="vertical-title">
+            Graphic Designer
+          </div>
+          <div class="vertical-desc">
+            Designed logos, thumbnails and social media creatives.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr>
+
+    <!-- ==========================
+         ABOUT SECTION
+    ========================== -->
+
+    <section class="about-section" id="about">
+
+      <span class="text-gray">Get to know me</span>
+      <h1>About Me</h1>
+
+      <div class="about-content">
+
+        <!-- About Text -->
+        <div class="about-text">
+
+          <!--
+            ============================================
+            HOW TO CHANGE PERSONAL INFORMATION:
+            Edit the paragraph text below to update
+            your name, description, or career goal.
+            ============================================
+          -->
+
+          <p>
+            I am a passionate Web Developer and Freelancer who enjoys building modern,
+            responsive, and user-friendly websites. I continuously improve my skills in
+            frontend and backend development while creating projects that solve real-world
+            problems.
+          </p>
+          <p>
+            My goal is to deliver professional digital experiences through clean design
+            and efficient code. I love turning ideas into fully functional products that
+            look great on every device.
+          </p>
+
+          <div class="career-goal">
+             <strong>Career Goal:</strong> To work with innovative teams worldwide as a
+            full-stack developer and build digital products that make a real impact.
+          </div>
+
+        </div>
+
+        <!-- Skills Cards -->
+        <div class="about-skills">
+
+          <h3>Technologies I Work With</h3>
+
+          <div class="skills-grid">
+
+            <div class="skill-card">
+              <span class="skill-icon"></span> HTML5
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-icon"></span> CSS3
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-icon"></span> JavaScript
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-icon"></span> Bootstrap
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-icon"></span> Node.js
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-icon"></span> Git & GitHub
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-icon"></span> Responsive Design
+            </div>
+
+            <div class="skill-card">
+              <span class="skill-icon"></span> Graphic Design
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr>
+
+    <!-- ==========================
+         PROJECTS SECTION
+    ========================== -->
+
+    <section class="projects-section" id="projects">
+
+      <span class="text-gray">Things I have built</span>
+      <h1>My Projects</h1>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT CARD 1 -->
+        <div class="project-card">
+
+          <div class="project-img-placeholder"></div>
+
+          <div class="project-body">
+            <h3>Portfolio Website</h3>
+            <p>A fully responsive developer portfolio built with pure HTML, CSS and JavaScript showcasing my skills and projects.</p>
+            <div class="project-btns">
+              <!-- Replace # with your Live Project URL -->
+              <a href="#" target="_blank" class="btn-demo">Live Demo</a>
+              <!-- Replace # with your GitHub Repository URL -->
+              <a href="#" target="_blank" class="btn-github">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PROJECT CARD 2 -->
+        <div class="project-card">
+
+          <div class="project-img-placeholder"></div>
+
+          <div class="project-body">
+            <h3>Educational Website</h3>
+            <p>A tech institute website with course listings, student and teacher dashboards, and MongoDB backend integration.</p>
+            <div class="project-btns">
+              <!-- Replace # with your Live Project URL -->
+              <a href="#" target="_blank" class="btn-demo">Live Demo</a>
+              <!-- Replace # with your GitHub Repository URL -->
+              <a href="#" target="_blank" class="btn-github">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- PROJECT CARD 3 -->
+        <div class="project-card">
+
+          <div class="project-img-placeholder"></div>
+
+          <div class="project-body">
+            <h3>Blog Website</h3>
+            <p>A responsive blogging platform with article pages, category filters, and a clean reading layout.</p>
+            <div class="project-btns">
+              <!-- Replace # with your Live Project URL -->
+              <a href="#" target="_blank" class="btn-demo">Live Demo</a>
+              <!-- Replace # with your GitHub Repository URL -->
+              <a href="#" target="_blank" class="btn-github">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PROJECT CARD 6 -->
+        <div class="project-card">
+
+          <div class="project-img-placeholder"></div>
+
+          <div class="project-body">
+            <h3>Freelance Client Project</h3>
+            <p>A professional business website delivered for a freelance client with custom design and contact form.</p>
+            <div class="project-btns">
+              <!-- Replace # with your Live Project URL -->
+              <a href="#" target="_blank" class="btn-demo">Live Demo</a>
+              <!-- Replace # with your GitHub Repository URL -->
+              <a href="#" target="_blank" class="btn-github">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr>
+
+    <!-- ==========================
+         CONTACT SECTION
+    ========================== -->
+
+    <section class="contact-section" id="contact">
+
+      <span class="text-gray">Get in touch</span>
+      <h1>Contact Me</h1>
+
+      <div class="contact-wrapper">
+
+        <div class="contact-info">
+
+          <!-- Name -->
+          <div class="contact-item">
+            <div class="contact-icon">👤</div>
+            <div class="contact-detail">
+              <span>Name</span>
+              <!--
+                ============================================
+                HOW TO CHANGE YOUR NAME:
+                Replace "Waqas Ahmed" below with your name.
+                ============================================
+              -->
+              <span>Waqas Ahmed</span>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-detail">
+              <span>Email</span>
+              <!--
+                ============================================
+                HOW TO CHANGE YOUR EMAIL:
+                Replace the email below with your own.
+                ============================================
+              -->
+              <a href="mailto:waqasahmedqadri5@gmail.com">waqasahmedqadri5@gmail.com</a>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="contact-item">
+            <div class="contact-icon"></div>
+            <div class="contact-detail">
+              <span>Phone</span>
+              <a href="tel:03408188724">03408188724</a>
+            </div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="contact-item">
+            <div class="contact-icon"></div>
+            <div class="contact-detail">
+              <span>WhatsApp</span>
+              <span>03302236231</span>
+            </div>
+          </div>
+
+          <!-- WhatsApp Button -->
+          <!--
+            ============================================
+            HOW TO CHANGE WHATSAPP BUTTON NUMBER:
+            Replace "923302236231" in the href below.
+            Country code 92 + your 10-digit number.
+            Example: https://wa.me/923001234567
+            ============================================
+          -->
+          <a href="https://wa.me/923302236231" target="_blank" class="whatsapp-btn">
+
+            <!-- WhatsApp SVG Icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+
+            Chat on WhatsApp
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <p>Waqas Ahmed</p>
+        <span>A passionate web developer building modern, responsive and user-friendly websites.</span>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div class="footer-social">
+        <h4>Social Media</h4>
+        <div class="social-icons">
+
+          <!-- Paste GitHub Profile Link Here -->
+          <a href="#" target="_blank"> GitHub</a>
+
+          <!-- Paste LinkedIn Profile Link Here -->
+          <a href="#" target="_blank"> LinkedIn</a>
+
+          <!-- Paste Facebook Profile Link Here -->
+          <a href="#" target="_blank"> Facebook</a>
+
+          <!-- Paste Instagram Profile Link Here -->
+          <a href="#" target="_blank"> Instagram</a>
+
+          <!-- Paste YouTube Channel Link Here -->
+          <a href="#" target="_blank">▶ YouTube</a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+
+      <!-- Year is auto-updated by JavaScript below -->
+      <p>© <span id="year"></span> Waqas Ahmed. All Rights Reserved.</p>
+
+      <!-- Back to Top Button -->
+      <a href="#hero" class="back-to-top">↑ Back to Top</a>
+
+    </div>
+
+  </footer>
+
+  <!-- Typed JS -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <script>
+
+    /* ==========================
+       TYPED.JS ANIMATION
+    ========================== */
+
+    var typed = new Typed("#element", {
+      strings: [
+        "Web Developer",
+        "UI/UX Designer",
+        "Freelancer",
+        "Graphic Designer",
+        "Video Editor"
+      ],
+      typeSpeed: 60,
+      backSpeed: 40,
+      backDelay: 1000,
+      loop: true
+    });
+
+    /* ==========================
+       AUTO UPDATE YEAR IN FOOTER
+    ========================== */
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
